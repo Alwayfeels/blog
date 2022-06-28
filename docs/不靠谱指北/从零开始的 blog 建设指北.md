@@ -188,3 +188,15 @@ module.exports = {
 vercel 会为每一次部署记录一个副本页面，点击右侧的 view deployment 就会进入那一次部署的时候的页面。方便你在两次部署之间对比差异。
 
 更多 [vercel guide](https://vercel.com/guides) 参考
+
+### 遇到困难
+
+可以参考我的 [blog-demo工程](https://github.com/Alwayfeels/blog-demo)
+
+### 博客拓展思路
+
+- 使用 vuepress 主题进行拓展
+- 搜索功能优化
+- 自定义域名（域名购买和备案在各大云服务商均可购买）
+- 博客访问数据统计
+- 评论系统
