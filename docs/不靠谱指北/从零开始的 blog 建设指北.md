@@ -64,7 +64,7 @@ pnpm install -D vuepress
     // 官网推荐的配置
     // "docs:dev": "vuepress dev docs",
     // "docs:build": "vuepress build docs"
-	// 我们修改的配置，因为vercel 自动部署需要使用 build 而非 docs:build
+  	// 我们修改的配置，因为vercel 自动部署默认需要使用 build 命令
     "dev": "vuepress dev docs", 
     "build": "vuepress build docs"
   }
@@ -82,9 +82,10 @@ npm run dev
 
 ### 3. 修改 vuepress 配置
 这一节会简单配置vuepress，实现标题，导航跳转，静态图片引入功能。
+
 [参考 Vuepress 基本配置](https://vuepress.vuejs.org/zh/guide/basic-config.html)
 
-1. 在 vuepress 目录下添加 /.vuepress 目录，在 .vuepress目录下添加 config.js 文件
+1. 在 docs 目录下添加 /.vuepress 目录，在 .vuepress目录下添加 config.js 文件
 
 在[这里](https://vuepress.vuejs.org/zh/config/#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE)查看vuepress 提供给 config.js 的所有配置
 
