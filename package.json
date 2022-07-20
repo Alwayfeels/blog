@@ -4,6 +4,7 @@
   "description": "Alwayfeels's Blog",
   "main": "index.js",
   "scripts": {
+    "dev": "vuepress dev docs",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "build": "vuepress build docs",
