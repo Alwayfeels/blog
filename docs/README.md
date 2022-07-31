@@ -1,17 +1,16 @@
 # 技术
 ## 浏览器
-- [浏览器并发请求限制](./浏览器/浏览器并发请求限制.md)
-- [test](./test.md)
+- [浏览器并发请求限制](./tech/browserQequestLimit.md)
 ## 不靠谱指北
-- [Pinia 5分钟入门不完全指北](./Vue/Pinia%205分钟入门不完全指北.md)
-- [从零开始的 blog 建设指北](./不靠谱指北/从零开始的%20blog%20建设指北.md)
+- [Pinia 5分钟入门不完全指北](./tech/piniaGuide.md)
+- [从零开始的 blog 建设指北](./tech/blogBuildGuide.md)
 
 ## 前端工程化
 
-- [速览包管理器：npm, yarn, pnpm](./前端工程化/速览包管理器：npm,%20yarn,%20pnpm.md)
-- [npm run dev 后发生了什么？](./前端工程化/npm%20run%20dev%20后发生了什么？.md)
-- [npx 和 npm 的区别](./前端工程化/npx%20和%20npm%20的区别.md)。
+- [速览包管理器：npm, yarn, pnpm](./tech/packManageIntro.md)
+- [npm run dev 后发生了什么？](./tech/beforeNpmRunDev.md)
+- [npx 和 npm 的区别](./tech/diffWithNpxNpm.md)
 
 # 生活
 ## 不靠谱指北
-- [不靠谱指北 - 机械键盘](./不靠谱指北/机械键盘选购不靠谱指北.md)
+- [不靠谱指北 - 机械键盘](./life/keyboardGuide.md)
