@@ -437,18 +437,103 @@ console.log(product.count)
 
 ```
 ---
-> 更多Reactive API参考 [Vue 官方文档 Reactive API](https://v3.cn.vuejs.org/api/basic-reactivity.html#reactive)
 
-## mileStone
-- [x] reactive 的实现
-- [x] track 收集依赖
-- [x] trigger 触发依赖
-- [ ] ref 的实现
-- [ ] computed 的实现
 
-## 问题
+## ref
+
+> 有人会把 ref 等同于只有一个 value 属性的 reactive，比如：
+> 
+> ```js
+> function ref ( initValue ) {
+> 	return reative({ value: initValue })
+> }
+> ```
+> 
+> 但实际它们并不完全相等，比如你不能向 ref 添加除了 value 的其他任何属性
+
+从源码设计可以很容易的发现它们不相等
+
+### [对象访问器](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Object_initializer)
+
+对象访问器是 Javascript 原生的定义对象的方式
+
+```js
+let user = {
+	firstName: 'Hello',
+	lastName: 'World',
+	
+	get fullName() {
+		return `${this.firstName} ${this.lastName}`
+	},
+	
+	set fullName(val) {
+		[this.firstName, this.lastName] = val.split(' ')
+	}
+}
+```
+
+ref 的设计基于对象访问器而非 proxy：
+
+```js
+function ref(raw) {
+	const r = {
+		get value() {
+			track(r, 'value')
+			return raw
+		},
+		set value(newVal) {
+			raw = newVal;
+			trigger(r, 'value')
+		}
+	}
+	return r
+}
+```
+
+和 reactive 一样，在 get 中收集（track）依赖，在 set 中触发（trigger）依赖
+
+## computed
+Vue3 中的 computed 的使用方法像这样：[官方示例](https://cn.vuejs.org/guide/essentials/computed.html#basic-example)
+
+```html
+<script setup>
+import { reactive, computed } from 'vue'
+
+const author = reactive({
+  name: 'John Doe',
+  books: [
+    'Vue 2 - Advanced Guide',
+    'Vue 3 - Basic Guide',
+    'Vue 4 - The Mystery'
+  ]
+})
+
+// 一个计算属性 ref
+const publishedBooksMessage = computed(() => {
+  return author.books.length > 0 ? 'Yes' : 'No'
+})
+</script>
+```
+
+computed 和 ref 很相似，在 TypeScript 中，所有的 computed 变量的类型被称为 `ComputedRef`
+
+实现如下：
+
+```js
+function computed (getter) {
+	// 创建一个响应式对象
+	let result = ref();
+	// 将传入的 function 写入 effect，此时
+	effect(() => {
+		result.value = getter()
+	})
+
+	return result;	
+}
+```
 
 ## 引用
+- [Vue 官方文档 Reactive API](https://v3.cn.vuejs.org/api/basic-reactivity.html#reactive)
 - [Vue mastery: 编译器模块 课程地址（英文官网视频带源码和图片）](https://www.vuemastery.com/courses/vue-3-reactivity/vue3-reactivity)
 - [Vue mastery: 编译器模块 课程地址（B站带翻译）](https://www.bilibili.com/video/BV1SZ4y1x7a9)
 - [Vue mastery: vue 源码解析 课程地址（B站带翻译）](https://www.bilibili.com/video/BV1rC4y187Vw)
