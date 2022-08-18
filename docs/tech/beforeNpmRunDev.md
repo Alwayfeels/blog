@@ -46,5 +46,5 @@ Scripts available in tagging-music@0.1.0 via `npm run-script`:
 - 综上所述，`npm run serve` 就是在运行 `vue-cli-service.js` 这个 `js` 文件
 
 ## ref
-[输入 npm run xxx 后发生了什么？](https://juejin.cn/post/7097947121210359839)
-[npm run serve 后发生了什么](http://drinkmilker.com/index.php/archives/33/) （该文章包含vue-cli-service.js 的函数解析）
+- [输入 npm run xxx 后发生了什么？](https://juejin.cn/post/7097947121210359839)
+- [npm run serve 后发生了什么](http://drinkmilker.com/index.php/archives/33/) （该文章包含vue-cli-service.js 的函数解析）
