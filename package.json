@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/Alwayfeels/blog/issues"
   },
-  "homepage": "https://github.com/Alwayfeels/blog#readme",
+  "homepage": "https://Alwayfeels.github.io/blog",
   "devDependencies": {
     "vuepress": "^1.9.7"
   }
