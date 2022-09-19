@@ -21,6 +21,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
           BRANCH: gh-pages
-          FOLDER: docs
+          FOLDER: public
           personal_token: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: public
