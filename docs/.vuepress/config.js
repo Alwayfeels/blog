@@ -1,5 +1,5 @@
 module.exports = {
-  base: "./", // prod
+  base: "/blog/", // prod
   // base: "/", // dev
   dest: 'public',
   title: 'Alwayfeels\'s Blog',
