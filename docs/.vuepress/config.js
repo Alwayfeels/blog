@@ -1,5 +1,6 @@
 module.exports = {
-  base: "/",
+  base: "./", // prod
+  // base: "/", // dev
   dest: 'public',
   title: 'Alwayfeels\'s Blog',
   description: 'Just a place to share my thoughts',
