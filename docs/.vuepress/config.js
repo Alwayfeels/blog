@@ -1,6 +1,5 @@
 module.exports = {
-  base: "/blog/", // prod
-  // base: "/", // dev
+  base: process.env.CONFIG_BASE,
   dest: 'public',
   title: 'Alwayfeels\'s Blog',
   description: 'Just a place to share my thoughts',
