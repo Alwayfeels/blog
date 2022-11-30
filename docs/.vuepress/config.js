@@ -1,7 +1,7 @@
 module.exports = {
   base: process.env.BASE || '/blog/',
   dest: 'public',
-  title: 'Alwayfeels\'s Blog',
+  title: 'CloudS\'s Blog',
   description: 'Just a place to share my thoughts',
   themeConfig: {
     sidebar: 'auto',
