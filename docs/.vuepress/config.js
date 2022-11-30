@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/',
+  base: process.env.BASE || '/blog/',
   dest: 'public',
   title: 'CloudS\'s Blog',
   description: 'Just a place to share my thoughts',
